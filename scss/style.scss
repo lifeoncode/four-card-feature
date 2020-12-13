@@ -1,0 +1,217 @@
+@import "./config";
+
+body {
+  background-color: $neutral-gray;
+  font-family: "Poppins", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: inherit;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, $primary-red, orangered, $primary-red);
+  border-radius: 32px;
+}
+
+header {
+  text-align: center;
+  padding: 32px 0;
+
+  .header_inner {
+    width: 50%;
+    margin: 0 auto;
+
+    h1 {
+      color: $neutral-darkblue;
+      font-size: 32px;
+      font-weight: 400;
+    }
+
+    h2 {
+      font-size: 24px;
+      color: $neutral-darkblue;
+      margin: 16px 0;
+    }
+
+    p {
+      font-size: 16px;
+      color: darken($color: $neutral-blue, $amount: 10%);
+    }
+  }
+}
+
+.container {
+  @include gridDisplay(repeat(3, 1fr), 16px);
+  padding: 32px 0;
+
+  .card {
+    position: relative;
+    padding: 64px 32px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px $neutral-blue;
+
+    h3 {
+      font-size: 20px;
+      color: $neutral-darkblue;
+    }
+
+    p {
+      font-size: 14px;
+      color: darken($color: $neutral-blue, $amount: 10%);
+      margin: 16px 0 32px 0;
+    }
+
+    img {
+      position: absolute;
+      right: 32px;
+      bottom: 32px;
+      width: 15%;
+    }
+
+    &.horizontal {
+      align-self: center;
+
+      &:first-child {
+        border-top: 6px solid $primary-cyan;
+      }
+      &:last-child {
+        border-top: 6px solid $primary-blue;
+      }
+    }
+  }
+
+  .vertical {
+    @include gridDisplay(none, 16px);
+
+    .card:first-child {
+      border-top: 6px solid $primary-red;
+    }
+    .card:last-child {
+      border-top: 6px solid $primary-orange;
+    }
+  }
+}
+
+footer {
+  padding: 32px;
+  text-align: center;
+
+  p {
+    color: $neutral-darkblue;
+    font-size: 12px;
+
+    a {
+      color: $primary-red;
+      text-decoration: underline;
+    }
+  }
+}
+
+@media screen and (min-width: 1550px) {
+  header {
+    .header_inner {
+      width: 40%;
+    }
+  }
+
+  .container {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  header {
+    .header_inner {
+      width: 30%;
+    }
+  }
+
+  .container {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  .container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  header {
+    .header_inner {
+      width: 70%;
+    }
+  }
+
+  .container {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  header {
+    .header_inner {
+      width: 80%;
+    }
+  }
+
+  .container {
+    width: 80%;
+    @include gridDisplay(none, 16px);
+
+    .card {
+      padding: 32px 64px;
+
+      img {
+        width: 8%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .container {
+    .card {
+      padding: 32px;
+
+      p {
+        margin-right: 32px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 440px) {
+  header {
+    .header_inner {
+      width: 90%;
+
+      h1 {
+        font-size: 26px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .container {
+    .card {
+      h3 {
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}

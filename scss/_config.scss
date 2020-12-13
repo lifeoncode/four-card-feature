@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$primary-red: hsl(0, 78%, 62%);
+$primary-cyan: hsl(180, 62%, 55%);
+$primary-orange: hsl(34, 97%, 64%);
+$primary-blue: hsl(212, 86%, 64%);
+$neutral-darkblue: hsl(234, 12%, 34%);
+$neutral-blue: hsl(229, 6%, 66%);
+$neutral-gray: hsl(0, 0%, 98%);
+
+a {
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.4;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+@mixin flexDisplay($dir, $align, $justify) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $dir;
+}
+
+@mixin gridDisplay($col, $gap) {
+  display: grid;
+  grid-template-columns: $col;
+  gap: $gap;
+}
+
+@mixin transition {
+  transition: all 0.3s ease;
+}
